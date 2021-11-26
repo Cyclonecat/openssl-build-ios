@@ -8,7 +8,7 @@
 set -u
 
 # 压缩文件名（必须是 .tar 压缩格式，不然无法解压缩）
-OPENSSL_COMPRESSED_FN="openssl-1.0.2o.tar"
+OPENSSL_COMPRESSED_FN="openssl-1.0.2o.tar.gz"
 #echo "${OPENSSL_COMPRESSED_FN}"
 
 # 解压缩后的文件名（即去掉压缩后缀 .tar*）
@@ -109,8 +109,8 @@ export CROSS_SDK=$3
 
 # -miphoneos-version-min选项指定最小支持的iOS版本；
 # -fembed-bitcode选项开启bitcode的支持，去掉就不支持bitcode
-export CC="${CLANG} -arch ${ARCH} -miphoneos-version-min=8.0 -fembed-bitcode"
-# export CC="${CLANG} -arch ${ARCH} -miphoneos-version-min=8.0"
+export CC="${CLANG} -arch ${ARCH} -miphoneos-version-min=9.0 -fembed-bitcode"
+# export CC="${CLANG} -arch ${ARCH} -miphoneos-version-min=9.0"
 
 make clean &> ${OPENSSL_BUILD_LOG_DIR}/make_clean.log
 
